@@ -2,9 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 from datetime import datetime
 import random
-
-# --- 🔐 Gemini API Key ---
-genai.configure(api_key="AIzaSyDqc2kmRAdde9QM2cMix7RKko2PRV1DtjI")  # Replace with your actual key
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
 
 # --- 🎨 Page Configuration ---
